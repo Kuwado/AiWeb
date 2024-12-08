@@ -1,0 +1,35 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  background-color: var(--bg-secondary);
+}
+
+.sidebar-item {
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+
+  .icon {
+    font-size: 20px;
+    width: 30px;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &.active {
+    color: var(--bg-secondary);
+    background-color: var(--text-secondary);
+  }
+}

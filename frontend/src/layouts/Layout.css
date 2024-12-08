@@ -1,0 +1,8 @@
+.layout {
+  padding-left: 20vw;
+}
+
+.content {
+  width: 80vw;
+  background-color: var(--bg-primary);
+}
