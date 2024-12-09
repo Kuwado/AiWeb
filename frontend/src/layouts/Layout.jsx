@@ -12,6 +12,7 @@ const Layout = () => {
           <Routes>
             <Route path="/chatbot" element={pages.chat} />
             <Route path="/text-to-speech" element={pages.textToSpeech} />
+            <Route path="/text-to-image" element={pages.textToImage} />
           </Routes>
         </div>
       </div>

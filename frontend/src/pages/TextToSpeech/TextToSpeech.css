@@ -1,0 +1,47 @@
+.tts-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.text-area {
+  width: 80%;
+  height: 20vh;
+  background-color: #dddddd;
+  outline: none;
+  border: 2px solid var(--bg-secondary);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.change-btn {
+  width: 250px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.error {
+  color: #fafafa;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.voice {
+  margin-top: 20px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fafafa;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+}

@@ -1,6 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCommentDots, faMicrophone } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCommentDots,
+  faImage,
+  faMicrophone,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
@@ -31,6 +35,18 @@ const Sidebar = () => {
           <FontAwesomeIcon icon={faMicrophone} />
         </div>
         <div className="title">Văn bản thành giọng nói</div>
+      </Link>
+
+      <Link
+        to="/text-to-image"
+        className={`sidebar-item ${
+          location.pathname === "/text-to-image" ? "active" : ""
+        }`}
+      >
+        <div className="icon">
+          <FontAwesomeIcon icon={faImage} />
+        </div>
+        <div className="title">Văn bản thành hình ảnh</div>
       </Link>
     </div>
   );

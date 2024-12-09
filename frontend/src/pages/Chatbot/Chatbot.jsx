@@ -18,6 +18,7 @@ const Chatbot = () => {
 
     const userMessage = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
+    setInput("");
 
     try {
       const response = await axios.post("http://localhost:5000/chatbot", {
@@ -33,8 +34,6 @@ const Chatbot = () => {
     } catch (error) {
       console.error("API Error:", error);
     }
-
-    setInput("");
   };
 
   const formatText = (text) => {
