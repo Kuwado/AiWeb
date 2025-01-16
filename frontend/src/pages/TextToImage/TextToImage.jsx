@@ -12,7 +12,7 @@ const TextToImage = () => {
     setText(e.target.value);
   };
 
-  const handleChangeToVoice = async (e) => {
+  const handleChangeToImage = async (e) => {
     e.preventDefault();
     if (!text) {
       setError("Vui lòng nhập nội dung");
@@ -23,18 +23,12 @@ const TextToImage = () => {
     setImageUrl(null);
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/text-to-speech",
-        { message: text },
-        {
-          responseType: "blob",
-        }
-      );
+      const response = await axios.post("http://localhost:5000/text-to-image", {
+        message: text,
+      });
+      console.log(response);
       setText("");
-      // Tạo URL cho file audio MP3 từ blob
-      const audioBlob = response.data;
-      const iUrl = URL.createObjectURL(audioBlob);
-      setImageUrl(iUrl);
+      setImageUrl(response.data.imageUrl);
     } catch (err) {
       setError("Something went wrong. Please try again later.");
     } finally {
@@ -57,7 +51,7 @@ const TextToImage = () => {
         className="change-btn"
         type="button"
         disabled={loading}
-        onClick={handleChangeToVoice}
+        onClick={handleChangeToImage}
       >
         {loading ? "Đang tạo..." : "Chuyển thành hình ảnh"}
       </button>
@@ -66,7 +60,6 @@ const TextToImage = () => {
 
       {imageUrl && (
         <div className="image">
-          <h2>Hình ảnh đã được tạo:</h2>
           <img src={imageUrl} alt="" />
         </div>
       )}
